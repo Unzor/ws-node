@@ -16,7 +16,15 @@ const sleep = (milliseconds) => {
   return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
 
-function run(n, cb){var e=new WebSocket(`${"http:"===document.location.protocol?"ws":"wss"}://bashbox.herokuapp.com/ws`);e.onopen=function(){e.onmessage=function(e){cb(e.data);};e.send(n+"\r")}}
+function run(n, cb) {
+ var e = new WebSocket(`${"http:"===document.location.protocol?"ws":"wss"}://bashbox.herokuapp.com/ws`);
+ e.onopen=function(){
+  e.onmessage=function(e){
+      cb(e.data);
+  };
+  e.send(n+"\r")
+ }
+}
 
 
 async function run_node(name, code) {
