@@ -1,3 +1,17 @@
+function arrayFindIncludes(key, arr) {
+    var result;
+    var none = null;
+    arr.forEach(function(k) {
+        if (k.includes(key)) {
+            result = k;
+            none = k;
+        } else {
+            result = none;
+        }
+    })
+    return result;
+}
+
 const sleep = (milliseconds) => {
   return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
