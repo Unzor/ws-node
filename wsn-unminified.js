@@ -34,7 +34,7 @@ var aeb = [];
 dataURL = e.target.result;
 run("echo \"" + dataURL.split(",").pop() + "\" | base64 -d | cat > " + name, (res) => {
 run("node " + name, (res) => {
-if (!res.includes("\[\033[01;34m\]\w\[\033[00m\] \[\033[01;32m\]$ \[\033[00m\]") || res !== "node " + name) {
+if (!res.includes("\[\033[01;34m\]\w\[\033[00m\] \[\033[01;32m\]$ \[\033[00m\]") || !res.includes("node " + name)) {
 aeb.push(res);
 }
 })
