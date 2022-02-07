@@ -43,7 +43,7 @@ aeb.push(res);
 }
 
    a.readAsDataURL(new Blob([code], {type: "text/javascript"}));
-await sleep(4000);
+await sleep(5000);
 var filtered1 = aeb.slice(aeb.indexOf(arrayFindIncludes("node", aeb)) + 2, aeb.length - 1).reverse().join("\n").replaceAll("\r", "").replaceAll("", "").split("\n").reduce(function(uniqueArray, elem){
 
  // checking element is already exist or not
