@@ -54,5 +54,11 @@ var filtered1 = aeb.slice(aeb.indexOf(arrayFindIncludes("node", aeb)) + 2, aeb.l
   return /\S/.test(str);
 }).reverse()
 
-return filtered1.slice(2, filtered1.length).join("\n");
+var filtered2 = filtered1.slice(2, filtered1.length).join("\n");
+    
+var resf = filtered2;
+  if (resf.split("\n").shift() == "node index.js") {
+    resf = resf.split("\n").slice(1, filtered2.split("\n").length).join("\n")
+  }
+    return resf;
 }
